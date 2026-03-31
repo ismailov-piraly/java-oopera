@@ -1,3 +1,7 @@
+package model;
+
+import show.*;
+
 import java.util.ArrayList;
 
 public class Ballet extends MusicalShow {
