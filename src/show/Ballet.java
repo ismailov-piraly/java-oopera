@@ -1,6 +1,8 @@
-package model;
+package show;
 
-import show.*;
+import model.Actor;
+import model.Director;
+import model.Person;
 
 import java.util.ArrayList;
 

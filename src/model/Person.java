@@ -1,6 +1,4 @@
-package show;
-
-import model.Gender;
+package model;
 
 public class Person {
     private String name;

@@ -1,5 +1,6 @@
-import model.Actor;
-import model.Director;
+package show;
+
+import model.*;
 
 import java.util.ArrayList;
 
@@ -51,9 +52,15 @@ public class Show {
     @Override
     public String toString() {
         String result = "Show{";
+        int count = 0;
 
         for (Actor actor : listOfActors) {
-            result += actor.toString() + ", ";
+            if (++count == this.listOfActors.size()) {
+                result += actor.toString();
+            } else {
+                result += actor.toString() + ", ";
+            }
+
         }
         result += '}';
 
@@ -74,19 +81,27 @@ public class Show {
 
         if (actor == null) {
             System.out.println("actor is null");
+            return;
         } else if (surname == null) {
             System.out.println("surname is null");
+            return;
         } else if (this.listOfActors.isEmpty()) {
             System.out.println("actors is empty");
+            return;
         } else if (this.listOfActors.contains(actor)) {
-            Actor actorToReplace = findBySurname(surname);
-            if (actorToReplace == null) {
-                System.out.println("surname not found");
-                return;
-            }
-            this.listOfActors.remove(actorToReplace);
-            this.listOfActors.add(actor);
+            System.out.println("actor already exists");
+            return;
         }
+
+        Actor actorToReplace = findBySurname(surname);
+
+        if (actorToReplace == null) {
+            System.out.println("surname not found");
+            return;
+        }
+
+        this.listOfActors.remove(actorToReplace);
+        this.listOfActors.add(actor);
     }
 
     public Actor findBySurname(String surname) {

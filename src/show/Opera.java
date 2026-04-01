@@ -1,12 +1,15 @@
+package show;
+
 import model.Actor;
 import model.Director;
+import model.Person;
 
 import java.util.ArrayList;
 
 public class Opera extends MusicalShow {
     private int choirSize;
 
-    public Opera(String title, int duration, Director director, ArrayList<Actor> actors, String musicAuthor, String librettoText, int choirSize) {
+    public Opera(String title, int duration, Director director, ArrayList<Actor> actors, Person musicAuthor, String librettoText, int choirSize) {
         super(title, duration, director, actors, musicAuthor, librettoText);
         this.choirSize = choirSize;
     }
